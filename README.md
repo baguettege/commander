@@ -146,3 +146,7 @@ public class ServerMain {
 - Context creation is user-defined via a factory, for example `args -> new ServerContext(args, server)`
 
 ---
+
+## License
+
+This project is licensed under the MIT License.
