@@ -15,6 +15,7 @@ with strong type-safety.
 - Simple command registries
 - Custom command contexts
 - CLI argument parsing with support for quoted arguments
+- Multiple command environment support
 
 ---
 
