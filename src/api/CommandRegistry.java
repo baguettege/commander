@@ -6,7 +6,6 @@ import exceptions.UnknownCommandException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.function.Supplier;
 
 /**
  * A registry that holds and manages {@link Command} instances.
@@ -44,9 +43,9 @@ public class CommandRegistry<C extends CommandContext<C>> {
      * @param constructors command no-arg constructors to create the commands for registry
      */
     @SafeVarargs
-    public CommandRegistry(Supplier<Command<C>>... constructors) {
-        for (Supplier<Command<C>> constructor : constructors) {
-            Command<C> instance = constructor.get();
+    public CommandRegistry(CommandConstructor<C>... constructors) {
+        for (CommandConstructor<C> constructor : constructors) {
+            Command<C> instance = constructor.create();
             String name = instance.name();
 
             if (registry.get(name) != null)
