@@ -1,4 +1,4 @@
-# Commander
+# Commander - legacy
 
 ---
 
