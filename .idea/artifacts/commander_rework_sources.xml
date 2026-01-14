@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="commander-rework-sources">
-    <output-path>$PROJECT_DIR$/out/artifacts/commander_rework_sources</output-path>
-    <root id="archive" name="commander-rework-sources.jar">
-      <element id="dir-copy" path="$PROJECT_DIR$/src" />
-    </root>
-  </artifact>
-</component>

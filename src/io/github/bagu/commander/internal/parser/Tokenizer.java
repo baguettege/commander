@@ -46,12 +46,20 @@ public final class Tokenizer {
             char c = text.charAt(i);
 
             if (isEscaped) {
-                String escapeSequence = switch (c) {
-                    case 'n' -> "\n";
-                    case '\\' -> "\\";
-                    case '"' -> "\"";
-                    default -> throw new TokenizationException("Unknown escape sequence: " + c);
-                };
+                String escapeSequence;
+                switch (c) {
+                    case 'n':
+                        escapeSequence = "\n";
+                        break;
+                    case '\\':
+                        escapeSequence = "\\";
+                        break;
+                    case '"':
+                        escapeSequence = "\"";
+                        break;
+                    default:
+                        throw new TokenizationException("Unknown escape sequence: " + c);
+                }
                 tokenBuilder.append(escapeSequence);
                 isEscaped = false;
             } else if (c == '\\') {
@@ -59,7 +67,7 @@ public final class Tokenizer {
             } else if (c == '"') {
                 isInQuotes = !isInQuotes;
             } else if (!isInQuotes && c == ' ') {
-                if (!tokenBuilder.isEmpty()) {
+                if (tokenBuilder.length() != 0) {
                     tokens.add(tokenBuilder.toString());
                     tokenBuilder.setLength(0);
                 }
@@ -73,7 +81,7 @@ public final class Tokenizer {
         if (isEscaped)
             throw new TokenizationException("Trailing escape");
 
-        if (!tokenBuilder.isEmpty())
+        if (tokenBuilder.length() != 0)
             tokens.add(tokenBuilder.toString());
 
         return List.copyOf(tokens);

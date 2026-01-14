@@ -23,16 +23,16 @@ import java.util.Objects;
  * <p>
  *     An example:
  *     <pre>
- *         {@code ArgumentDefinition<String> name = ArgumentDefinition.<String>builder()
+ *         {@code ArgumentDefinition<String> nameArg = ArgumentDefinition.<String>builder()
  *         .name("name")
  *         .type(String.class)
- *         .description("The name to use")
+ *         .description("The server name")
  *         .build();
  *
  * ArgumentDefinition<Integer> port = ArgumentDefinition.<Integer>builder()
  *         .name("port")
  *         .type(Integer.class)
- *         .description("The port to open the server on")
+ *         .description("The port to bind the server to")
  *         .build();}
  *     </pre>
  * </p>
