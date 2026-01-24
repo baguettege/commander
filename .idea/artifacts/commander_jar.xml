@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="commander:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/commander_jar</output-path>
-    <root id="archive" name="commander.jar">
-      <element id="module-output" name="commander" />
-    </root>
-  </artifact>
-</component>
