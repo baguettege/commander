@@ -98,4 +98,8 @@ public final class Tokenizer {
 
         return tokens;
     }
+
+    public static void main(String[] args) {
+        System.out.println(tokenize("command \"argument with spaces\" --text=\"quoted value\""));
+    }
 }

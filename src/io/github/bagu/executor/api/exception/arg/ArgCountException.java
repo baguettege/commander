@@ -1,11 +1,13 @@
 package io.github.bagu.executor.api.exception.arg;
 
+import io.github.bagu.executor.api.CompositeCommandEngine;
+
 /**
  * Exception thrown when the number of arguments doesn't match expectations.
  *
  * @see io.github.bagu.executor.api.spec.ArgSpec
  * @see io.github.bagu.executor.api.Environment
- * @see io.github.bagu.executor.api.SyncCommandEngine
+ * @see CompositeCommandEngine
  */
 public class ArgCountException extends ArgException {
     /**

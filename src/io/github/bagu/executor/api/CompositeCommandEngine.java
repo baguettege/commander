@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * A synchronous command executor that dispatches commands to multiple named {@link Environment environments}.
+ * A command executor that dispatches commands to multiple named {@link Environment environments}.
  * <p>
  * Each environment is responsible for executing its own commands. The first token of the input string is
  * interpreted as the environment name, and the remaining tokens are passed to that environment.
@@ -17,10 +17,10 @@ import java.util.Objects;
  * @see CommandExecutor
  * @see Environment
  */
-public final class SyncCommandEngine implements CommandExecutor {
+public final class CompositeCommandEngine implements CommandExecutor {
     private final Map<String, Environment<?>> environments;
 
-    private SyncCommandEngine(Map<String, Environment<?>> environments) {
+    private CompositeCommandEngine(Map<String, Environment<?>> environments) {
         this.environments = environments;
     }
 
@@ -48,13 +48,13 @@ public final class SyncCommandEngine implements CommandExecutor {
 
     @Override
     public String toString() {
-        return "SyncCommandEngine{" +
+        return "CompositeCommandEngine{" +
                 "environments=" + environments +
                 "}";
     }
 
     /**
-     * Returns a new builder for creating {@link SyncCommandEngine} instances.
+     * Returns a new builder for creating {@link CompositeCommandEngine} instances.
      *
      * @return new builder
      */
@@ -63,7 +63,7 @@ public final class SyncCommandEngine implements CommandExecutor {
     }
 
     /**
-     * Builder for creating {@link SyncCommandEngine} instances.
+     * Builder for creating {@link CompositeCommandEngine} instances.
      */
     public static final class Builder {
         private Builder() {}
@@ -71,12 +71,12 @@ public final class SyncCommandEngine implements CommandExecutor {
         private final Map<String, Environment<?>> environments = new HashMap<>();
 
         /**
-         * Builds the {@link SyncCommandEngine} instance.
+         * Builds the {@link CompositeCommandEngine} instance.
          *
-         * @return a new {@link SyncCommandEngine}
+         * @return a new {@link CompositeCommandEngine}
          */
-        public SyncCommandEngine build() {
-            return new SyncCommandEngine(
+        public CompositeCommandEngine build() {
+            return new CompositeCommandEngine(
                     Map.copyOf(environments)
             );
         }

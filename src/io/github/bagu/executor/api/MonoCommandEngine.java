@@ -8,17 +8,17 @@ import java.util.Objects;
 /**
  * A command executor for a single environment.
  * <p>
- * Unlike {@link SyncCommandEngine} which dispatches to multiple environments, this executor works
+ * Unlike {@link CompositeCommandEngine} which dispatches to multiple environments, this executor works
  * with a single environment and passes all tokens directly to it for execution.
  *
  * @param <T> the type of {@link Context} used by the environment
  * @see Environment
  * @see CommandExecutor
  */
-public final class SingleEnvCommandEngine<T extends Context<T>> implements CommandExecutor {
+public final class MonoCommandEngine<T extends Context<T>> implements CommandExecutor {
     private final Environment<T> environment;
 
-    private SingleEnvCommandEngine(
+    private MonoCommandEngine(
             Environment<T> environment
     ) {
         this.environment = environment;
@@ -41,13 +41,13 @@ public final class SingleEnvCommandEngine<T extends Context<T>> implements Comma
 
     @Override
     public String toString() {
-        return "SingleEnvCommandEngine{" +
+        return "MonoCommandEngine{" +
                 "environment=" + environment +
                 "}";
     }
 
     /**
-     * Returns a new builder for creating {@link SingleEnvCommandEngine} instances.
+     * Returns a new builder for creating {@link MonoCommandEngine} instances.
      *
      * @param <T> the type of {@link Context} used by the environment
      * @return new builder
@@ -57,7 +57,7 @@ public final class SingleEnvCommandEngine<T extends Context<T>> implements Comma
     }
 
     /**
-     * Builder for creating {@link SingleEnvCommandEngine} instances.
+     * Builder for creating {@link MonoCommandEngine} instances.
      *
      * @param <T> the type of {@link Context} used by the environment
      */
@@ -67,15 +67,15 @@ public final class SingleEnvCommandEngine<T extends Context<T>> implements Comma
         private Environment<T> environment;
 
         /**
-         * Builds the {@link SingleEnvCommandEngine} instance.
+         * Builds the {@link MonoCommandEngine} instance.
          *
-         * @return a new {@link SingleEnvCommandEngine}
+         * @return a new {@link MonoCommandEngine}
          * @throws NullPointerException if the environment is null
          */
-        public SingleEnvCommandEngine<T> build() {
+        public MonoCommandEngine<T> build() {
             Objects.requireNonNull(environment);
 
-            return new SingleEnvCommandEngine<>(
+            return new MonoCommandEngine<>(
                     environment
             );
         }
