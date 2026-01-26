@@ -2,7 +2,6 @@ package io.github.bagu.executor.api;
 
 import io.github.bagu.executor.api.exception.arg.ArgNotFoundException;
 import io.github.bagu.executor.api.spec.ArgSpec;
-import io.github.bagu.executor.internal.TypedArgs;
 
 import java.util.Map;
 import java.util.Objects;
@@ -25,20 +24,15 @@ public abstract class Context<T extends Context<T>> {
      * Concrete implementations should not define the parameters themselves, and instead
      * allow the framework to do so.
      *
-     * @param typedArgs the typed arguments
-     * @param registry the command registry
-     * @throws NullPointerException if any parameter is null
+     * @param params the context parameters
+     * @throws NullPointerException if the parameters are null
      */
-    protected Context(
-            TypedArgs typedArgs,
-            CommandRegistry<T> registry
-    ) {
-        Objects.requireNonNull(typedArgs);
-        Objects.requireNonNull(registry);
+    protected Context(ContextParameters<T> params) {
+        Objects.requireNonNull(params);
 
-        this.args = typedArgs.args();
-        this.options = typedArgs.options();
-        this.registry = registry;
+        this.args = params.typedArgs().args();
+        this.options = params.typedArgs().options();
+        this.registry = params.registry();
     }
 
     /**
@@ -86,7 +80,7 @@ public abstract class Context<T extends Context<T>> {
      *
      * @return the command registry
      */
-    public CommandRegistry<T> registry() {
+    public CommandRegistry<T> getRegistry() {
         return registry;
     }
 
