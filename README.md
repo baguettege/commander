@@ -46,11 +46,10 @@ public class ServerContext extends Context<ServerContext> {
     private final Server server;
     
     public ServerContext(
-            TypedArgs typedArgs,
-            CommandRegistry<ServerContext> registry,
+            ContextParameters<ServerContext> params,
             Server server
     ) {
-        super(typedArgs, registry);
+        super(params);
         this.server = server;
     }
     
@@ -65,7 +64,7 @@ public class ServerContext extends Context<ServerContext> {
 ```java
 Server server;
 ContextFactory<ServerContext> contextFactory =
-        ((typedArgs, registry) -> new ServerContext(typedArgs, registry, server));
+        (params -> new ServerContext(params, server));
 ```
 
 ### 3. Register `Converter`s

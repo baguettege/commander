@@ -94,7 +94,7 @@ public final class AsyncCommandExecutor implements AutoCloseable, CommandExecuto
                 "executor=" + executor +
                 ", service=" + service +
                 ", exceptionHandler=" + exceptionHandler +
-                "}";
+                '}';
     }
 
     /**

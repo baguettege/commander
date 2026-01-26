@@ -1,7 +1,4 @@
-package io.github.bagu.executor.api.internal;
-
-import io.github.bagu.executor.internal.ArgBinder;
-import io.github.bagu.executor.internal.ParsedArgs;
+package io.github.bagu.executor.internal;
 
 import java.util.Map;
 import java.util.Objects;
@@ -14,9 +11,6 @@ import java.util.Objects;
  * <p>
  * Arguments and options are stored as maps keyed to their specification names, with
  * values as objects of their specified types.
- * <p>
- * This class is a part of the public API to allow custom {@link io.github.bagu.executor.api.ContextFactory}
- * implementations. Do not instantiate directly.
  *
  * @see ArgBinder
  * @see ParsedArgs
@@ -32,7 +26,7 @@ public final class TypedArgs {
      * @param options the map of option names to typed values (or defaults)
      * @throws NullPointerException if any parameter is null
      */
-    public TypedArgs(
+    TypedArgs(
             Map<String, Object> args,
             Map<String, Object> options
     ) {

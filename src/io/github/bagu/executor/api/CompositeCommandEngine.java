@@ -50,7 +50,7 @@ public final class CompositeCommandEngine implements CommandExecutor {
     public String toString() {
         return "CompositeCommandEngine{" +
                 "environments=" + environments +
-                "}";
+                '}';
     }
 
     /**

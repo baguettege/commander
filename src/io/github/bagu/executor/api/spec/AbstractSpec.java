@@ -50,8 +50,8 @@ public abstract class AbstractSpec {
     @Override
     public String toString() {
         return "AbstractSpec{" +
-                "name=" + name +
-                ", description=" + description +
-                "}";
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

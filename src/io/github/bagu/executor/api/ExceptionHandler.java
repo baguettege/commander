@@ -1,7 +1,7 @@
 package io.github.bagu.executor.api;
 
 /**
- * Handles exceptions that occur during command execution.
+ * Handles exceptions that occur.
  * <p>
  * Implementations define how to respond to errors, such as logging, displaying error messages, or
  * recovering from failures.

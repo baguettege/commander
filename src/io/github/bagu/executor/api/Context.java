@@ -2,7 +2,7 @@ package io.github.bagu.executor.api;
 
 import io.github.bagu.executor.api.exception.arg.ArgNotFoundException;
 import io.github.bagu.executor.api.spec.ArgSpec;
-import io.github.bagu.executor.api.internal.TypedArgs;
+import io.github.bagu.executor.internal.TypedArgs;
 
 import java.util.Map;
 import java.util.Objects;

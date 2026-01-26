@@ -5,7 +5,7 @@ import io.github.bagu.executor.api.exception.command.CommandNotFoundException;
 import io.github.bagu.executor.internal.ArgBinder;
 import io.github.bagu.executor.internal.ArgParser;
 import io.github.bagu.executor.internal.ParsedArgs;
-import io.github.bagu.executor.api.internal.TypedArgs;
+import io.github.bagu.executor.internal.TypedArgs;
 import io.github.bagu.executor.api.spec.CommandSpec;
 
 import java.util.*;
@@ -94,18 +94,19 @@ public final class Environment<T extends Context<T>> {
                 Objects.requireNonNull(spec) // will never be null
         );
 
-        T context = contextFactory.create(typedArgs, commandRegistry);
+        ContextParameters<T> params = new ContextParameters<>(typedArgs, commandRegistry);
+        T context = contextFactory.create(params);
         spec.action().execute(context);
     }
 
     @Override
     public String toString() {
         return "Environment{" +
-                "name=" + name +
+                "name='" + name + '\'' +
                 ", commandRegistry=" + commandRegistry +
                 ", converterRegistry=" + converterRegistry +
                 ", contextFactory=" + contextFactory +
-                "}";
+                '}';
     }
 
     /**

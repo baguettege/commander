@@ -5,7 +5,6 @@ import io.github.bagu.executor.api.ConverterRegistry;
 import io.github.bagu.executor.api.exception.arg.ArgCountException;
 import io.github.bagu.executor.api.exception.arg.ArgValidationException;
 import io.github.bagu.executor.api.exception.converter.ConverterNotFoundException;
-import io.github.bagu.executor.api.internal.TypedArgs;
 import io.github.bagu.executor.api.spec.ArgSpec;
 import io.github.bagu.executor.api.spec.CommandSpec;
 import io.github.bagu.executor.api.spec.OptionSpec;

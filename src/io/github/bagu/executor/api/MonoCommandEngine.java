@@ -43,7 +43,7 @@ public final class MonoCommandEngine<T extends Context<T>> implements CommandExe
     public String toString() {
         return "MonoCommandEngine{" +
                 "environment=" + environment +
-                "}";
+                '}';
     }
 
     /**

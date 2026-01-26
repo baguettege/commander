@@ -50,7 +50,7 @@ public final class CommandRegistry<T extends Context<T>> {
     public String toString() {
         return "CommandRegistry{" +
                 "commandSpecs=" + commandSpecs +
-                "}";
+                '}';
     }
 
     /**

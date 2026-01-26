@@ -47,7 +47,7 @@ public final class ConverterRegistry {
     public String toString() {
         return "ConverterRegistry{" +
                 "converters=" + converters +
-                "}";
+                '}';
     }
 
     /**

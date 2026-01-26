@@ -61,8 +61,8 @@ public abstract class ParameterSpec<T> extends AbstractSpec {
     @Override
     public String toString() {
         return "ParameterSpec{" +
-                "name=" + super.name() +
-                ", description=" + super.description() +
+                "name='" + super.name() + '\'' +
+                ", description='" + super.description() + '\'' +
                 ", type=" + type +
                 ", validator=" + validator +
                 "}";

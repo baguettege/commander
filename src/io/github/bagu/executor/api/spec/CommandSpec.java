@@ -88,13 +88,13 @@ public final class CommandSpec<T extends Context<T>> extends AbstractSpec {
     @Override
     public String toString() {
         return "CommandSpec{" +
-                "name=" + super.name() +
-                ", description=" + super.description() +
+                "name='" + super.name() + '\'' +
+                ", description='" + super.description() + '\'' +
                 ", action=" + action +
                 ", argSpecs=" + argSpecs +
                 ", optionSpecs=" + optionSpecs +
                 ", subRegistry=" + subRegistry +
-                "}";
+                '}';
     }
 
     /**

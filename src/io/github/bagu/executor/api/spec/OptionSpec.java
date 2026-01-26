@@ -44,12 +44,12 @@ public final class OptionSpec<T> extends ParameterSpec<T> {
     @Override
     public String toString() {
         return "OptionSpec{" +
-                "name=" + super.name() +
-                ", description=" + super.description() +
+                "name='" + super.name() + '\'' +
+                ", description='" + super.description() + '\'' +
                 ", type=" + super.type() +
                 ", validator=" + super.validator() +
                 ", defaultValue=" + defaultValue +
-                "}";
+                '}';
     }
 
     /**

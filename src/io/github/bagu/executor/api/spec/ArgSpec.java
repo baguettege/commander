@@ -28,11 +28,11 @@ public final class ArgSpec<T> extends ParameterSpec<T> {
     @Override
     public String toString() {
         return "ArgSpec{" +
-                "name=" + super.name() +
-                ", description=" + super.description() +
+                "name='" + super.name() + '\'' +
+                ", description='" + super.description() + '\'' +
                 ", type=" + super.type() +
                 ", validator=" + super.validator() +
-                "}";
+                '}';
     }
 
     /**

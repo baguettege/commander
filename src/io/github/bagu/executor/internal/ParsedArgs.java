@@ -1,7 +1,5 @@
 package io.github.bagu.executor.internal;
 
-import io.github.bagu.executor.api.internal.TypedArgs;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -29,7 +27,7 @@ public final class ParsedArgs {
      * @param options the map of option names to values
      * @throws NullPointerException if any parameter is null
      */
-    public ParsedArgs(
+    ParsedArgs(
             List<String> args,
             Map<String, String> options
     ) {

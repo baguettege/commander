@@ -95,8 +95,9 @@ public final class CommandShell implements AutoCloseable {
                 "scanner=" + scanner +
                 ", executor=" + executor +
                 ", exceptionHandler=" + exceptionHandler +
+                ", workerThread=" + workerThread +
                 ", closed=" + closed +
-                "}";
+                '}';
     }
 
     /**
