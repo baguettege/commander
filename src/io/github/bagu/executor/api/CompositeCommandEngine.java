@@ -1,6 +1,7 @@
 package io.github.bagu.executor.api;
 
 import io.github.bagu.executor.api.exception.arg.ArgCountException;
+import io.github.bagu.executor.api.exception.environment.EnvironmentNotFoundException;
 import io.github.bagu.executor.internal.Tokenizer;
 
 import java.util.HashMap;
@@ -29,6 +30,7 @@ public final class CompositeCommandEngine implements CommandExecutor {
      *
      * @param string the full command string
      * @throws ArgCountException if no environment name is provided
+     * @throws EnvironmentNotFoundException if the given environment does not exist
      * @throws NullPointerException if the string is null
      */
     @Override
@@ -41,6 +43,10 @@ public final class CompositeCommandEngine implements CommandExecutor {
         }
 
         Environment<?> environment = environments.get(tokens.get(0));
+        if (environment == null) {
+            throw new EnvironmentNotFoundException(tokens.get(0));
+        }
+
         environment.execute(
                 tokens.subList(1, tokens.size())
         );
